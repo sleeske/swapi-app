@@ -1,6 +1,6 @@
 # SWAPI APP
 
-This repo contains the very basic Star Wars API Explorer Project. Hope you like it :)
+This repo contains the very basic Star Wars API Explorer Project. Hope you'll like it :)
 
 ## Prerequisites
 
