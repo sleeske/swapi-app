@@ -18,5 +18,6 @@ class ColumnsForm(forms.Form):
     )
 
     columns = forms.MultipleChoiceField(
-        widget=forms.CheckboxSelectMultiple, choices=OPTIONS
+        widget=forms.CheckboxSelectMultiple(attrs={"class": "list-no-bullets"}),
+        choices=OPTIONS,
     )

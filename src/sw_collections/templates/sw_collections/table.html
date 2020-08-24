@@ -1,9 +1,11 @@
-<table>
-    <tr>
-        {% for header in headers %}
-        <th>{{ header }}</th>
-        {% endfor %}
-    </tr>
+<table class="table table-light">
+    <thead class="thead-dark">
+        <tr>
+            {% for header in headers %}
+            <th>{{ header | title }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
     {% for row in rows %}
     <tr>
         {% for column in row %}

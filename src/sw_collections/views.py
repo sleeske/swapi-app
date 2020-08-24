@@ -61,7 +61,7 @@ class CollectionsValueCountsView(DetailView, FormView):
             "form": form,
             "headers": columns + [self.aggr_name],
             "rows": self._value_count_service.count_values(
-                self.get_object(), columns, self.aggr_name
+                self.get_object(), tuple(columns), self.aggr_name
             ),
         }
         return render(self.request, self.template_name, context)

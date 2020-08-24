@@ -3,10 +3,10 @@
 {% block title %} {{ object.created }}{% endblock %}
 
 {% block content %}
-<p>{{ object.csv_file.name }}</p>
+<p class="h2 pt-4 pb-4">{{ object.csv_file.name }}</p>
 
 {% include "sw_collections/table.html" %}
 
-<a href="{% url 'sw-collections:detail' object.pk %}?limit={{ limit | urlencode }}">Load more</a>
-<a href="{% url 'sw-collections:value-counts' object.pk %}">Value Counts</a>
+<a class="btn btn-dark" href="{% url 'sw-collections:detail' object.pk %}?limit={{ limit | urlencode }}">Load more</a>
+<a class="btn btn-dark" href="{% url 'sw-collections:value-counts' object.pk %}">Value Counts</a>
 {% endblock %}

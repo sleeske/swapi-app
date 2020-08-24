@@ -3,15 +3,19 @@
 {% block title %}Star Wars Collections{% endblock %}
 
 {% block content %}
-<h2>Collections</h2>
-<a href="{% url 'sw-collections:fetch' %}">Fetch</a>
+<div class="row pt-3 pb-3">
+    <p class="h2 mr-4">Collections</p>
+    <a class="btn btn-success h-75" href="{% url 'sw-collections:fetch' %}">Fetch</a>
+</div>
 
-<ul>
-    {% for collection in object_list %}
-    <li>
-        <p><a href="{% url 'sw-collections:detail' collection.pk %}">{{ collection.created }}</a></p>
-    </li>
-    {% endfor %}
-</ul>
+<div class="row">
+    <ul class="list-group w-100">
+        {% for collection in object_list %}
+        <li class="list-group-item w-100">
+            <a href="{% url 'sw-collections:detail' collection.pk %}">{{ collection.created }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}
