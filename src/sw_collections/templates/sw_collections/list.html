@@ -1,0 +1,17 @@
+{% extends 'config/base.html' %}
+
+{% block title %}Star Wars Collections{% endblock %}
+
+{% block content %}
+<h2>Collections</h2>
+<a href="{% url 'sw-collections:fetch' %}">Fetch</a>
+
+<ul>
+    {% for collection in object_list %}
+    <li>
+        <p>{{ collection.created }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
