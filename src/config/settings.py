@@ -28,6 +28,11 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # Application definition
 
+APPS = [
+    "config",
+    "sw_collections.apps.SWCollectionsConfig",
+]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -35,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-]
+] + APPS
 
 if DEBUG:
     INSTALLED_APPS.append("django_extensions")
