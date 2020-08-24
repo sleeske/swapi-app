@@ -120,3 +120,18 @@ class CollectionsDisplayService:
             table = etl.fromcsv(source)
 
         return table
+
+
+class CollectionsValueCountService:
+    @lru_cache
+    def count_values(
+        self, collection: Collection, columns: List[str], save_as: str
+    ) -> etl.Table:
+        if not collection.csv_file.name:
+            return etl.Table()
+
+        with collection.csv_file.open() as f:
+            source = etl.MemorySource(f.read())
+            table = etl.fromcsv(source)
+
+        return table.aggregate(columns, {save_as: len})

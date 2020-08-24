@@ -1,0 +1,15 @@
+{% extends 'config/base.html' %}
+
+{% block title %}Value Counts for {{ obj.created }}{% endblock%}
+
+{% block content %}
+<p>test</p>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{% include "sw_collections/table.html" %}
+
+{% endblock %}

@@ -5,20 +5,8 @@
 {% block content %}
 <p>{{ object.csv_file.name }}</p>
 
-<table>
-    <tr>
-        {% for header in headers %}
-        <th>{{ header }}</th>
-        {% endfor %}
-    </tr>
-    {% for row in people %}
-    <tr>
-        {% for column in row %}
-        <td>{{ column }}</td>
-        {% endfor %}
-    </tr>
-    {% endfor %}
-</table>
+{% include "sw_collections/table.html" %}
 
 <a href="{% url 'sw-collections:detail' object.pk %}?limit={{ limit | urlencode }}">Load more</a>
+<a href="{% url 'sw-collections:value-counts' object.pk %}">Value Counts</a>
 {% endblock %}
