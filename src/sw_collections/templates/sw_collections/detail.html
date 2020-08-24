@@ -1,0 +1,24 @@
+{% extends 'config/base.html' %}
+
+{% block title %} {{ object.created }}{% endblock %}
+
+{% block content %}
+<p>{{ object.csv_file.name }}</p>
+
+<table>
+    <tr>
+        {% for header in headers %}
+        <th>{{ header }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in people %}
+    <tr>
+        {% for column in row %}
+        <td>{{ column }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'sw-collections:detail' object.pk %}?limit={{ limit | urlencode }}">Load more</a>
+{% endblock %}

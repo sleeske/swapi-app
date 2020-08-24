@@ -9,7 +9,7 @@
 <ul>
     {% for collection in object_list %}
     <li>
-        <p>{{ collection.created }}</p>
+        <p><a href="{% url 'sw-collections:detail' collection.pk %}">{{ collection.created }}</a></p>
     </li>
     {% endfor %}
 </ul>

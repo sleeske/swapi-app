@@ -11,3 +11,5 @@ class Collection(models.Model):
     class Meta:
         verbose_name = _("collection")
         verbose_name_plural = _("collections")
+        ordering = ("-created",)
+
